@@ -23,8 +23,6 @@
         android:id="@+id/imgPerfil"
         android:layout_marginLeft="120dp"
         android:layout_marginTop="10dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
 
         />
 
@@ -47,11 +45,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/linearLayout"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout2">
 
          <LinearLayout
              android:layout_width="match_parent"
-             android:layout_height="wrap_content">
+             android:layout_height="100dp"
+             >
 
           <ImageView
               android:layout_width="15dp"
@@ -59,38 +60,71 @@
               android:layout_marginLeft="20dp"
               android:layout_marginTop="10dp"
 
-              android:background="#5af"/>
+              android:background="@drawable/ponto"/>
 
           <TextView
               android:layout_width="45dp"
               android:layout_height="20dp"
               android:layout_marginTop="20dp"
               android:textColor="#000"
-              android:textSize="16dp"
+              android:textSize="14dp"
               android:layout_marginLeft="10dp"
-              android:text="Email: "
+              android:text="EMAIL: "
               android:layout_below="@+id/linearLayout"
               android:layout_alignParentStart="true" />
 
-          <TextView
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:text="jaylsonMendesVAi@outlook.com"
-              android:layout_marginTop="20dp"
-              android:layout_marginLeft="10dp"
-              android:textColor="#000"
-              android:textSize="16dp"/>
-
-
-
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="jaylsonMendesAndroid@gmail.com"
+                 android:textSize="15dp"
+                 android:textColor="#000"
+                 android:layout_marginLeft="-30dp"
+                 android:layout_marginTop="48dp"
+                 />
 
          </LinearLayout>
 
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/linearLayout3"
+        android:orientation="vertical">
 
     </LinearLayout>
 
+    <View
+        android:layout_width="330dp"
+        android:layout_height="1dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="-25dp"
+        android:layout_below="@+id/linearLayout3"
+        android:background="#5af"
+        android:layout_alignStart="@+id/view">
+
+    </View>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/linearLayout3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="67dp">
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="35dp"
+            android:text="Sair"
+            android:background="#5af"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="70dp"/>
 
 
-
+    </LinearLayout>
 </RelativeLayout>
