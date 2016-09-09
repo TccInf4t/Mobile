@@ -96,6 +96,8 @@
         android:id="@+id/linearLayout3"
         android:orientation="vertical">
 
+
+
     </LinearLayout>
 
     <View
@@ -104,8 +106,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="-25dp"
         android:layout_below="@+id/linearLayout3"
-        android:background="#5af"
-        android:layout_alignStart="@+id/view">
+        android:background="#5af">
 
     </View>
 

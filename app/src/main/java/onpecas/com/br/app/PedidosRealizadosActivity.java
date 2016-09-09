@@ -1,5 +1,6 @@
 package onpecas.com.br.app;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -13,9 +14,23 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class PedidosRealizadosActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener
+{
+    //Lista dos Pediddos
+    ListView list_view_item;
+
+    ArrayAdapter<String> listAdapter;
+
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +47,26 @@ public class PedidosRealizadosActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        context = this;//definindo o contexto
+
+        list_view_item =(ListView) findViewById(R.id.list_view_item);
+
+        //Estou preenchendo o Adapter com uma lista vazia(list_view_item)
+        listAdapter = new ArrayAdapter<String>(
+             this,R.layout.list_view_item, new ArrayList<String>()
+        );
+
+
+        list_view_item.setAdapter(listAdapter);
+
+        list_view_item.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(context, DetalhesActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
