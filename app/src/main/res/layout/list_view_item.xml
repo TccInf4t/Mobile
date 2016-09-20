@@ -6,18 +6,77 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#D4D4D4"
+        android:background="#fff"
         android:orientation="horizontal"
         android:weightSum="1">
 
 
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="73dp"
-            android:layout_marginTop="2dp"
-            android:background="@drawable/arrow"
-            android:layout_marginLeft="120dp"
-         />
+        <View
+            android:layout_width="9dp"
+            android:layout_height="70dp"
+            android:background="#5af"
+            android:layout_marginLeft="1dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+            android:layout_width="65dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/imglista"
+            android:background="#ccc"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                    <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Data do Pedido:"
+                    android:textSize="20dp"
+                    android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-23dp"
+                        android:layout_marginLeft="170dp"
+                        android:layout_marginRight="5dp"
+                        android:textSize="20dp"
+                        android:id="@+id/datapedido"/>
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Data da Entrega:"
+                        android:textSize="20dp"
+                        android:layout_marginTop="8dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-20dp"
+                        android:id="@+id/dataentrega"
+                        android:textSize="20dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="170dp"
+                        />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+
+
 
 
     </LinearLayout>

@@ -121,6 +121,7 @@
         <Button
             android:layout_width="150dp"
             android:layout_height="35dp"
+            android:textColor="#fff"
             android:text="Sair"
             android:background="#5af"
             android:layout_marginLeft="110dp"

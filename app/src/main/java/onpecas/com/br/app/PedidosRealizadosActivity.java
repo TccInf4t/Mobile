@@ -18,6 +18,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +29,7 @@ public class PedidosRealizadosActivity extends AppCompatActivity
     //Lista dos Pediddos
     ListView list_view_item;
 
-    ArrayAdapter<String> listAdapter;
+    SimpleAdapter listAdapter;
 
     Context context;
 
@@ -50,23 +51,12 @@ public class PedidosRealizadosActivity extends AppCompatActivity
 
         context = this;//definindo o contexto
 
-        list_view_item =(ListView) findViewById(R.id.list_view_item);
 
-        //Estou preenchendo o Adapter com uma lista vazia(list_view_item)
-        listAdapter = new ArrayAdapter<String>(
-             this,R.layout.list_view_item, new ArrayList<String>()
-        );
+        String[] listAdapter = {"imglista", "datapedido", "dataentrega"};
+
+        int[] lista = {R.id.imglista, R.id.datapedido, R.id.dataentrega};
 
 
-        list_view_item.setAdapter(listAdapter);
-
-        list_view_item.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(context, DetalhesActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
     @Override

@@ -17,13 +17,60 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <TextView
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textSize="35dp"
+            android:textColor="#000"/>
+
+        <TextView
+            android:layout_width="148dp"
+            android:layout_height="wrap_content"
+            android:text="Detalhes"
+            android:textSize="35dp"
+            android:textColor="#000"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="-38dp"
+            android:layout_marginRight="65dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="#5af"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical">
 
 
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="1dp"
+            android:src="@drawable/perfil_ofivial"
+            android:layout_marginTop="10dp"/>
 
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="131dp"
+            android:layout_marginTop="-100dp"
+            android:text="Jaylson Mendes Silveira"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="131dp"
+            android:layout_marginTop="30dp"
+            android:text="jaylsonMendesAndroid@gmail.com"/>
 
 
     </LinearLayout>
-
 
 
 </RelativeLayout>
