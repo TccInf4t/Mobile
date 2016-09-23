@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="onpecas.com.br.app">
+    package="com.example.android.multidex.myapplication">
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality. 
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
 
     <application
         android:allowBackup="true"
@@ -8,6 +23,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        android:name="android.support.multidex.MultiDexApplication"
         <activity
             android:name=".LoginActivity"
             android:label="@string/app_name"
@@ -23,10 +39,6 @@
             android:label="@string/title_activity_inicial"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AcompanhamentoActivity"
-            android:label="@string/title_activity_acompanhamento"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".PedidosRealizadosActivity"
             android:label="@string/title_activity_pedidos_realizados"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -37,7 +49,23 @@
         <activity
             android:name=".DetalhesActivity"
             android:label="@string/title_activity_detalhes"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".AcompanhamentoMapsActivity"
+            android:label="@string/title_activity_acompanhamento_maps"></activity>
     </application>
 
 </manifest>

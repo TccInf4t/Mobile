@@ -89,7 +89,7 @@ public class InicialActivity extends AppCompatActivity
             Intent intent = new Intent(this, PedidosRealizadosActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_acompanhamento) {
-            Intent intent = new Intent(this, AcompanhamentoActivity.class);
+            Intent intent = new Intent(this, AcompanhamentoMapsActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_cliente) {
             Intent intent = new Intent(this, DadosClienteActivity.class);

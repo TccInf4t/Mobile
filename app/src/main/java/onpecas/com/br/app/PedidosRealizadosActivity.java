@@ -21,14 +21,15 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class PedidosRealizadosActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener
 {
     //Lista dos Pediddos
     ListView list_view_item;
-
     SimpleAdapter listAdapter;
 
     Context context;
@@ -50,12 +51,24 @@ public class PedidosRealizadosActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         context = this;//definindo o contexto
+        list_view_item = (ListView) findViewById(R.id.list_view_item);
+        List<HashMap<String,Object>> lst_map = new ArrayList<>();
 
+        for(int i = 1; i<=10 ; i++){
+            HashMap<String, Object> item_hashmap = new HashMap<>();
 
-        String[] listAdapter = {"imglista", "datapedido", "dataentrega"};
+            item_hashmap.put("id", i);
+            item_hashmap.put("nome", "nome"+i);
 
-        int[] lista = {R.id.imglista, R.id.datapedido, R.id.dataentrega};
+            lst_map.add(item_hashmap);
+        }
 
+        String[] coluna = {"id","nome"};
+        int[] Objeto = new int[]{R.id.datapedido, R.id.dataentrega};
+
+        SimpleAdapter adapter = new SimpleAdapter(this, lst_map, R.layout.list_view_item, coluna, Objeto);
+
+        list_view_item.setAdapter(adapter);
 
     }
 
@@ -104,7 +117,7 @@ public class PedidosRealizadosActivity extends AppCompatActivity
             Intent intent = new Intent(this, PedidosRealizadosActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_acompanhamento) {
-            Intent intent = new Intent(this, AcompanhamentoActivity.class);
+            Intent intent = new Intent(this, AcompanhamentoMapsActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_cliente) {
             Intent intent = new Intent(this, DadosClienteActivity.class);
@@ -115,4 +128,6 @@ public class PedidosRealizadosActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 }
