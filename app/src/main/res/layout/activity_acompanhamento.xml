@@ -9,7 +9,7 @@
     tools:openDrawer="start">
 
     <include
-        layout="@layout/app_bar_dados_cliente"
+        layout="@layout/app_bar_acompanhamento"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
@@ -21,7 +21,5 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_principal"
         app:menu="@menu/activity_principal_drawer" />
-
-
 
 </android.support.v4.widget.DrawerLayout>

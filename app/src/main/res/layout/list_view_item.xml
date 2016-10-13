@@ -24,18 +24,18 @@
             android:orientation="horizontal">
 
             <ImageView
-            android:layout_width="65dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="20dp"
-            android:id="@+id/imglista"
-            android:background="#ccc"/>
+                android:layout_width="65dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/imglista"
+                android:background="#ccc"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-                    <TextView
+                <TextView
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -43,32 +43,32 @@
                     android:textSize="20dp"
                     android:layout_marginTop="10dp"/>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="-23dp"
-                        android:layout_marginLeft="170dp"
-                        android:layout_marginRight="5dp"
-                        android:textSize="20dp"
-                        android:id="@+id/datapedido"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-23dp"
+                    android:layout_marginLeft="170dp"
+                    android:layout_marginRight="5dp"
+                    android:textSize="20dp"
+                    android:id="@+id/datapedido"/>
 
-                    <TextView
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="Data da Entrega:"
-                        android:textSize="20dp"
-                        android:layout_marginTop="8dp"/>
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Data da Entrega:"
+                    android:textSize="20dp"
+                    android:layout_marginTop="8dp"/>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="-20dp"
-                        android:id="@+id/dataentrega"
-                        android:textSize="20dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="170dp"
-                        />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-20dp"
+                    android:id="@+id/dataentrega"
+                    android:textSize="20dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="170dp"
+                    />
             </LinearLayout>
 
         </LinearLayout>
