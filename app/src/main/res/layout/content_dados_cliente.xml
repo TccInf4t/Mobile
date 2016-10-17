@@ -1,106 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D4D4D4"
-    android:orientation="vertical">
+    android:background="#F0F0F0"
+    tools:context="onpecas.com.br.app.DadosClienteActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:background="@drawable/meca"
-        android:layout_marginTop="20dp"
-        android:orientation="vertical">
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_marginTop="-35dp"
-        android:layout_marginLeft="1dp">
-
+        android:layout_height="match_parent">
 
 
 
         <android.support.v7.widget.CardView
-            xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:card_view="http://schemas.android.com/tools"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="340dp"
-            android:layout_height="110dp"
+            android:layout_height="145dp"
             card_view:cardCornerRadius="0dp"
-            app:cardElevation="0dp"
-            app:cardBackgroundColor="#fff"
-            android:layout_margin="10dp"
-            app:cardCornerRadius="3dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textColor="#000"
-                android:text="Jhon Everton Santana de OLiveira"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textColor="#000"
-                android:paddingTop="70dp"
-                android:text="jhonevertonapp@gmail.com"/>
-
-
-        </android.support.v7.widget.CardView>
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_marginTop="-350dp"
-        android:layout_marginLeft="10dp">
-
-
-
-        <android.support.v7.widget.CardView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:card_view="http://schemas.android.com/tools"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:layout_width="340dp"
-            android:layout_height="240dp"
-            card_view:cardCornerRadius="0dp"
-            app:cardElevation="0dp"
+            app:cardElevation="5dp"
             android:layout_gravity="center"
             app:cardBackgroundColor="#fff"
-            android:layout_margin="0dp"
-            app:cardCornerRadius="3dp">
+            app:cardCornerRadius="2dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="-70dp"
+            android:layout_below="@+id/imageView4"
+            android:layout_centerHorizontal="true">
 
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/perfil_ofivial"
+               />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jhon Everton Santana"
+                android:textColor="#000"
+                android:layout_marginLeft="-4dp"
+                android:layout_marginTop="-25dp"
+                android:layout_gravity="center"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email:"
+                android:textSize="17dp"
+                android:textColor="#000"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="85dp"
+               />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="jhonevertonapp@gmail.com"
+                android:layout_gravity="center"
+                android:textColor="#000"
+                android:textSize="16dp"
+                android:layout_marginLeft="-10dp"
+                android:layout_marginTop="23dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Telefone:"
+                android:textColor="#000"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="110dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="#000"
+                android:textSize="13dp"
+                android:layout_marginLeft="-55dp"
+                android:layout_marginTop="47dp"
+                android:text="(11)4167-0916"/>
 
         </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="385dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="-350dp"
+            android:background="@drawable/meca">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:textSize="20dp"
+                android:layout_marginLeft="130dp"
+                android:layout_marginTop="-20dp"
+                android:layout_gravity="center"
+                android:text="Suas Informações aqui! "/>
+
+        </LinearLayout>
+
     </LinearLayout>
-
-
-
-    <LinearLayout
-        android:layout_width="135dp"
-        android:layout_height="135dp"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
-        android:layout_marginTop="-450dp"
-
-        >
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="0dp"
-            android:background="@drawable/screen_border"
-            android:src="@drawable/perfil_ofivial"
-            />
-    </LinearLayout>
-
-
-
-
-</LinearLayout>
+</RelativeLayout>
