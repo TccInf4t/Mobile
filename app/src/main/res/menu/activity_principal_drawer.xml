@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
 
-    <group android:checkableBehavior="single">
+    <group android:checkableBehavior="single"
+       >
+
         <item
             android:id="@+id/nav_inicio"
             android:icon="@drawable/inicio"
             android:title="Inicio" />
         <item
             android:id="@+id/nav_pedidos"
-            android:icon="@drawable/pedido"
+            android:icon="@drawable/icon_pedido"
             android:title="Pedidos Realizados" />
         <item
             android:id="@+id/nav_acompanhamento"
-            android:icon="@drawable/acomplhamento"
+            android:icon="@drawable/icone_caminhao"
             android:title="Acompanhamento" />
         <item
             android:id="@+id/nav_cliente"

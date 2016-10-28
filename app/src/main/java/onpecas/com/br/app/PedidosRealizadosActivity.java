@@ -1,7 +1,10 @@
 package onpecas.com.br.app;
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -20,15 +23,25 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import onpecas.com.br.app.Model.Pedido;
+import onpecas.com.br.app.helper.BuscarDadosAPI;
+import onpecas.com.br.app.helper.ClienteLogado;
+import onpecas.com.br.app.helper.ConfigLink;
+import onpecas.com.br.app.helper.PedidoAdapter;
+
 public class PedidosRealizadosActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener
 {
     //Lista dos Pediddos
+
+    Pedido[] lstpedido;
     ListView list_view_item;
     SimpleAdapter listAdapter;
 
@@ -51,7 +64,7 @@ public class PedidosRealizadosActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         context = this;//definindo o contexto
-        list_view_item = (ListView) findViewById(R.id.list_view_item);
+       /* list_view_item = (ListView) findViewById(R.id.list_view_item);
         List<HashMap<String,Object>> lst_map = new ArrayList<>();
 
         for(int i = 1; i<=10 ; i++){
@@ -64,11 +77,75 @@ public class PedidosRealizadosActivity extends AppCompatActivity
         }
 
         String[] coluna = {"id","nome"};
-        int[] Objeto = new int[]{R.id.datapedido, R.id.dataentrega};
+        int[] Objeto = new int[]{R.id.txt_nomepedido, R.id.txt_dataPedido};
 
         SimpleAdapter adapter = new SimpleAdapter(this, lst_map, R.layout.list_view_item, coluna, Objeto);
 
-        list_view_item.setAdapter(adapter);
+        list_view_item.setAdapter(adapter);*/
+
+        new ObterDadosAPI().execute();
+
+    }
+
+    private class ObterDadosAPI extends AsyncTask<Void, Void, String>{
+        ProgressDialog progress;
+
+        @Override
+        protected void onPreExecute(){
+            super.onPreExecute();
+            String titulo = "Carregando dados";
+            String mensagem = "Aguarde...";
+            boolean indeterminado = true;
+            boolean podeCancelar = false;
+
+            progress = ProgressDialog
+                    .show(PedidosRealizadosActivity.this,
+                            titulo,
+                            mensagem,
+                            indeterminado,
+                            podeCancelar
+                    );
+
+        }
+
+        @Override
+        protected String doInBackground(Void... params) {
+
+            String json ;
+            String link= ConfigLink.LINK_API;
+
+            BuscarDadosAPI dadosAPI = new BuscarDadosAPI();
+
+            json = dadosAPI.getJson(link);
+
+            return json;
+        }
+
+        @Override
+        protected void onPostExecute(String stringJson) {
+            super.onPostExecute(stringJson);
+
+            progress.dismiss();
+            if(stringJson!=null){
+                Gson gson = new Gson();
+                lstpedido = gson.fromJson(stringJson, Pedido[].class);
+
+                PedidoAdapter adapter = new PedidoAdapter(
+                        PedidosRealizadosActivity.this,
+                        R.layout.list_view_item,
+                        lstpedido
+                );
+
+                list_view_item.setAdapter(adapter);
+            }else{
+                AlertDialog.Builder builder = new AlertDialog.Builder(PedidosRealizadosActivity.this).
+                        setTitle("Erro").
+                        setMessage("Não foi possivel carregar o conteudo, tente novamente mais tarde!").
+                        setPositiveButton("OK", null);
+                builder.create().show();
+            }
+        }
+
 
     }
 
@@ -82,27 +159,7 @@ public class PedidosRealizadosActivity extends AppCompatActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.principal, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
