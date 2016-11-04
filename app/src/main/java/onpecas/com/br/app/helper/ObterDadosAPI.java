@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.provider.Settings;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.android.gms.analytics.internal.zzy;
 import com.google.gson.Gson;
@@ -15,17 +16,18 @@ import onpecas.com.br.app.InicialActivity;
 import onpecas.com.br.app.LoginActivity;
 import onpecas.com.br.app.Model.Cliente;
 
-/**
- * Created by 15160977 on 27/10/2016.
- */
+
 public class ObterDadosAPI extends AsyncTask<Void, Void, String> {
     ProgressDialog progress;
+
+
+    //Esta fazendo a Busca da API do Site
 
     Context context;
     String txtEmail, txtSenha;
     public ObterDadosAPI(Context context, String txtEmail, String txtSenha){
         this.context =context;
-        this.txtEmail = txtEmail;
+        this.txtEmail =txtEmail;
         this.txtSenha=txtSenha;
     }
 
@@ -69,21 +71,20 @@ public class ObterDadosAPI extends AsyncTask<Void, Void, String> {
             Gson gson = new Gson();
 
             Cliente[] lstcliente;
-
             lstcliente = gson.fromJson(stringJson, Cliente[].class);
-            ClienteLogado.CLIENTELOGADO = lstcliente[0];
+            if(lstcliente != null){
+                ClienteLogado.CLIENTELOGADO = lstcliente[0];
+                Intent intent = new Intent(context, InicialActivity.class);
+                context.startActivity(intent);
 
-            System.out.print(ClienteLogado.CLIENTELOGADO.getNome());
-
-            Intent intent = new Intent(context, InicialActivity.class);
-            context.startActivity(intent);
-
-        }else{
-            AlertDialog.Builder builder = new AlertDialog.Builder(context).
-                    setTitle("Erro").
-                    setMessage("Não foi possivel carregar o conteudo, tente novamente mais tarde!").
-                    setPositiveButton("OK", null);
-            builder.create().show();
+                ((LoginActivity)context).finish();
+            }else {
+                AlertDialog.Builder builder = new AlertDialog.Builder(context).
+                        setTitle("Erro").
+                        setMessage("Não foi possivel carregar o conteudo, tente novamente mais tarde!").
+                        setPositiveButton("OK", null);
+                builder.create().show();
+            }
         }
     }
 }

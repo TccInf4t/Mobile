@@ -8,6 +8,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -22,6 +23,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 
@@ -64,25 +66,8 @@ public class PedidosRealizadosActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         context = this;//definindo o contexto
-       /* list_view_item = (ListView) findViewById(R.id.list_view_item);
-        List<HashMap<String,Object>> lst_map = new ArrayList<>();
 
-        for(int i = 1; i<=10 ; i++){
-            HashMap<String, Object> item_hashmap = new HashMap<>();
-
-            item_hashmap.put("id", i);
-            item_hashmap.put("nome", "nome"+i);
-
-            lst_map.add(item_hashmap);
-        }
-
-        String[] coluna = {"id","nome"};
-        int[] Objeto = new int[]{R.id.txt_nomepedido, R.id.txt_dataPedido};
-
-        SimpleAdapter adapter = new SimpleAdapter(this, lst_map, R.layout.list_view_item, coluna, Objeto);
-
-        list_view_item.setAdapter(adapter);*/
-
+        list_view_item = (ListView) findViewById(R.id.list_view_item);
         new ObterDadosAPI().execute();
 
     }
@@ -114,6 +99,8 @@ public class PedidosRealizadosActivity extends AppCompatActivity
             String json ;
             String link= ConfigLink.LINK_API;
 
+            link= link+"?buscarpedido&oid_cliente="+ClienteLogado.CLIENTELOGADO.getOid_cliente();
+
             BuscarDadosAPI dadosAPI = new BuscarDadosAPI();
 
             json = dadosAPI.getJson(link);
@@ -137,6 +124,7 @@ public class PedidosRealizadosActivity extends AppCompatActivity
                 );
 
                 list_view_item.setAdapter(adapter);
+
             }else{
                 AlertDialog.Builder builder = new AlertDialog.Builder(PedidosRealizadosActivity.this).
                         setTitle("Erro").

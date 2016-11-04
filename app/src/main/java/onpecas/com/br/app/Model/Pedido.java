@@ -4,102 +4,58 @@ package onpecas.com.br.app.Model;
 import android.graphics.Bitmap;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Pedido implements Serializable {
-    private int idPedido;
-    private double valor;
-    private String NomePedido,DataPedido,QtdPedidos;
-    private String frete, imagem;
-    private Bitmap imagembit;
+    private int oid_pedido;
+    private double frete;
+    private String nomestatus, descricaostatus, formapagamento, dtrealizado;
 
-    public Bitmap getImagembit() {
-        return imagembit;
+    public int getOid_pedido() {
+        return oid_pedido;
     }
 
-    public void setImagembit(Bitmap imagembit) {
-        this.imagembit = imagembit;
+    public void setOid_pedido(int oid_pedido) {
+        this.oid_pedido = oid_pedido;
     }
 
-    public String getImagem() {
-        return imagem;
-    }
-
-    public void setImagem(String imagem) {
-        this.imagem = imagem;
-    }
-
-    public String getFrete() {
+    public double getFrete() {
         return frete;
     }
 
-    public void setFrete(String frete) {
+    public void setFrete(double frete) {
         this.frete = frete;
     }
 
-    public String getQtdPedidos() {
-
-        return QtdPedidos;
+    public String getNomestatus() {
+        return nomestatus;
     }
 
-    public void setQtdPedidos(String qtdPedidos) {
-        QtdPedidos = qtdPedidos;
+    public void setNomestatus(String nomestatus) {
+        this.nomestatus = nomestatus;
     }
 
-    public double getValor() {
-
-        return valor;
+    public String getDescricaostatus() {
+        return descricaostatus;
     }
 
-    public void setValor(double valor) {
-        this.valor = valor;
+    public void setDescricaostatus(String descricaostatus) {
+        this.descricaostatus = descricaostatus;
     }
 
-    public String getImglista() {
-        return imglista;
+    public String getFormapagamento() {
+        return formapagamento;
     }
 
-    public void setImglista(String imglista) {
-        this.imglista = imglista;
+    public void setFormapagamento(String formapagamento) {
+        this.formapagamento = formapagamento;
     }
 
-    public String getDataPedido() {
-
-        return DataPedido;
+    public String getDtrealizado() {
+        return dtrealizado;
     }
 
-    public void setDataPedido(String txt_dataentrega) {
-        this.DataPedido = txt_dataentrega;
+    public void setDtrealizado(String dtrealizado) {
+        this.dtrealizado = dtrealizado;
     }
-
-    public String getNomePedido() {
-
-        return NomePedido;
-    }
-
-    public void setNomePedido(String txt_nomepedido) {
-        this.NomePedido = txt_nomepedido;
-    }
-
-    public Bitmap getImagemBit() {
-
-        return imagemBit;
-    }
-
-    public void setImagemBit(Bitmap imagemBit) {
-        this.imagemBit = imagemBit;
-    }
-
-    private String imglista;
-    private Bitmap imagemBit ;
-
-
-    public int getIdPedido() {
-        return idPedido;
-    }
-
-    public void setIdPedido(int idPedido) {
-        this.idPedido = idPedido;
-    }
-
-
 }

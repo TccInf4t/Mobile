@@ -1,6 +1,7 @@
 package onpecas.com.br.app.helper;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import onpecas.com.br.app.R;
 
 
 public class PedidoAdapter extends ArrayAdapter<Pedido> {
+
 
     int resource;
     public PedidoAdapter(Context context, int resource, Pedido[] objects) {
@@ -36,8 +38,8 @@ public class PedidoAdapter extends ArrayAdapter<Pedido> {
 
         if (pedido != null) {
 
+            Log.i("STRINGLOKONA", pedido.getNomestatus());
 
-            ImageView imglista = (ImageView) v.findViewById(R.id.imglista);
             TextView txt_nomepedido = (TextView) v.findViewById(R.id.txt_nomepedido);
             TextView txt_dataPedido = (TextView) v.findViewById(R.id.txt_dataPedido);
             TextView idPedido = (TextView) v.findViewById(R.id.idPedido);
@@ -45,9 +47,9 @@ public class PedidoAdapter extends ArrayAdapter<Pedido> {
 
             NumberFormat numberFormat = NumberFormat.getCurrencyInstance();
 
-            txt_nomepedido.setText(pedido.getNomePedido());
-            txt_dataPedido.setText(pedido.getDataPedido());
-            idPedido.setText(pedido.getIdPedido());
+            txt_nomepedido.setText(pedido.getNomestatus());
+            txt_dataPedido.setText(pedido.getDtrealizado());
+            idPedido.setText(pedido.getOid_pedido()+"");
 
 
            /* String link = String.format("%s%s", ConfigLink.LINK_IMG, home.getImagem());

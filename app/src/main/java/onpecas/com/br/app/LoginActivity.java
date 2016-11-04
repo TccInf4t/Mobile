@@ -21,6 +21,7 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 
 import onpecas.com.br.app.Model.Cliente;
+import onpecas.com.br.app.Model.Endereco;
 import onpecas.com.br.app.Model.Pedido;
 import onpecas.com.br.app.helper.BuscarDadosAPI;
 import onpecas.com.br.app.helper.ClienteLogado;
@@ -44,19 +45,18 @@ public class LoginActivity extends AppCompatActivity {
         txtLogin = (EditText) findViewById(R.id.txtLogin);
         txtSenha = (EditText) findViewById(R.id.txtSenha);
 
-        //Parei na validacao do botao entrar
-       // btnEntrar.setOnClickListener((View.OnClickListener) this);
-
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                //Esta convertendo o Layout para String
                 String email = txtLogin.getText().toString().trim();
                 String senha = txtSenha.getText().toString().trim();
 
+                //Verificando se o Email e Senha é valido
                 if(!email.isEmpty() && !senha.isEmpty()){
                     System.out.print(email+"-"+senha);
-                   // new ObterDadosAPI(LoginActivity.this, email, senha).execute();
+                    new ObterDadosAPI(LoginActivity.this, email, senha).execute();
                 }else{
                     AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this).
                             setTitle("Erro").
@@ -68,15 +68,15 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-
-
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
+
         } else {
             super.onBackPressed();
+            finish();
         }
     }
 

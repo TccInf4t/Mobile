@@ -12,7 +12,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:background="@drawable/meca"
         android:id="@+id/linearLayout">
 
@@ -27,13 +27,12 @@
         />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Jaylson Mendes Silveira"
         android:textSize="15dp"
         android:id="@+id/txtNomeCliente"
-        android:layout_marginTop="150dp"
-        android:layout_marginLeft="-145dp"
+        android:gravity="center"
+        android:textStyle="bold"
         android:textColor="#fff"
         android:layout_below="@+id/imgPerfil"
         android:layout_centerHorizontal="true" />
@@ -52,7 +51,7 @@
          <LinearLayout
              android:layout_width="match_parent"
              android:layout_height="100dp"
-             >
+             android:orientation="horizontal">
 
           <ImageView
               android:layout_width="15dp"
@@ -76,57 +75,30 @@
              <TextView
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content"
-                 android:text="jaylsonMendesAndroid@gmail.com"
+                 android:id="@+id/txtEmail"
                  android:textSize="15dp"
                  android:textColor="#000"
                  android:layout_marginLeft="-30dp"
                  android:layout_marginTop="48dp"
                  />
 
+             <View
+                 android:layout_width="330dp"
+                 android:layout_height="1dp"
+                 android:layout_marginLeft="-350dp"
+                 android:layout_marginTop="85dp"
+                 android:layout_below="@+id/linearLayout3"
+                 android:background="#5af">
+
+             </View>
+
+
          </LinearLayout>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/linearLayout2"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp"
-        android:id="@+id/linearLayout3"
-        android:orientation="vertical">
 
 
 
-    </LinearLayout>
 
-    <View
-        android:layout_width="330dp"
-        android:layout_height="1dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="-25dp"
-        android:layout_below="@+id/linearLayout3"
-        android:background="#5af">
-
-    </View>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/linearLayout3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="67dp">
-
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="35dp"
-            android:textColor="#fff"
-            android:text="Sair"
-            android:background="#5af"
-            android:layout_marginLeft="110dp"
-            android:layout_marginTop="70dp"/>
-
-
-    </LinearLayout>
 </RelativeLayout>

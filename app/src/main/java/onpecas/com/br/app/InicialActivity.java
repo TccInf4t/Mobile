@@ -12,6 +12,7 @@ import android.media.Image;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -21,10 +22,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import onpecas.com.br.app.helper.ClienteLogado;
+import onpecas.com.br.app.helper.ObterDadosAPI;
+
+import static onpecas.com.br.app.R.id.email;
+import static onpecas.com.br.app.R.id.none;
+import static onpecas.com.br.app.R.id.txtEmail;
+import static onpecas.com.br.app.R.id.txtLogin;
+import static onpecas.com.br.app.R.id.txt_nomepedido;
 
 public class InicialActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private TextView txtNomeCliente;
+    private TextView txtEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +57,19 @@ public class InicialActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        //Codigo que ira alimentar as Activity
+
+        txtEmail =(TextView) findViewById(R.id.txtEmail);
+        txtNomeCliente = (TextView) findViewById(R.id.txtNomeCliente);
+
+        //Dizendo que os "txts" é o mesmo que class CLIENTE LOGADO onde esta armazenando o ID do cliente
+        txtEmail.setText(ClienteLogado.CLIENTELOGADO.getEmail());
+        txtNomeCliente.setText(ClienteLogado.CLIENTELOGADO.getNome());
+
     }
+
+
+
 
     @Override
     public void onBackPressed() {

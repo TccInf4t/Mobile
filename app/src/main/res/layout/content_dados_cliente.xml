@@ -38,12 +38,11 @@
                />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Jhon Everton Santana"
                 android:id="@+id/txtNomeCliente"
                 android:textColor="#000"
-                android:layout_marginLeft="-10dp"
+                android:gravity="center"
                 android:layout_marginTop="-19dp"
                 android:layout_gravity="center"
                 android:textSize="20dp"/>
@@ -101,16 +100,25 @@
                     android:layout_height="30dp"
                     android:layout_marginTop="1dp"
                     android:layout_marginLeft="20dp"
-                    android:src="@drawable/telefone_icon" />
+                    android:src="@drawable/email_icon" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="(11)4167-0916"
-                    android:textSize="18dp"
+                    android:layout_marginLeft="35dp"
+                    android:textSize="13dp"
+                    android:layout_marginTop="-3dp"
+                    android:text="Email"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtEmail"
                     android:textColor="#000"
+                    android:textSize="11dp"
+                    android:layout_marginTop="9dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="40dp"/>
+                    android:layout_marginLeft="-30dp"/>
 
 
             </LinearLayout>
@@ -133,16 +141,25 @@
                     android:layout_height="30dp"
                     android:layout_marginTop="2dp"
                     android:layout_marginLeft="20dp"
-                    android:src="@drawable/email_icon" />
+                    android:src="@drawable/card_cpf" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="(11)4167-0916"
-                    android:textSize="18dp"
+                    android:layout_marginLeft="35dp"
+                    android:textSize="13dp"
+                    android:layout_marginTop="-3dp"
+                    android:text="Cpf/Cnpj"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                   android:id="@+id/txtDoc"
                     android:textColor="#000"
+                    android:textSize="11dp"
+                    android:layout_marginTop="9dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="40dp"/>
+                    android:layout_marginLeft="-50dp"/>
 
 
             </LinearLayout>
@@ -172,16 +189,25 @@
                     android:layout_height="30dp"
                     android:layout_marginTop="2dp"
                     android:layout_marginLeft="20dp"
-                    android:src="@drawable/ic_cast_light" />
+                    android:src="@drawable/calendar_icon" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="(11)4167-0916"
+                    android:layout_marginLeft="35dp"
+                    android:textSize="13dp"
+                    android:layout_marginTop="-3dp"
+                    android:text="Data de nascimento"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtDataNasc"
                     android:textColor="#000"
-                    android:textSize="18dp"
+                    android:textSize="11dp"
+                    android:layout_marginTop="9dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="40dp"/>
+                    android:layout_marginLeft="-115dp"/>
 
             </LinearLayout>
             <View

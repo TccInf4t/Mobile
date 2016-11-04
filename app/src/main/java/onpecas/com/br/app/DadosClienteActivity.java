@@ -13,9 +13,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import onpecas.com.br.app.helper.ClienteLogado;
 
 public class DadosClienteActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private TextView txtNomeCliente;
+    private TextView txtDoc;
+    private TextView txtEmail;
+    private TextView txtDataNasc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +41,18 @@ public class DadosClienteActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        //Codigo que ira alimentar as Activity
+
+        txtEmail =(TextView) findViewById(R.id.txtEmail);
+        txtNomeCliente = (TextView) findViewById(R.id.txtNomeCliente);
+        txtDoc = (TextView) findViewById(R.id.txtDoc);
+        txtDataNasc = (TextView) findViewById(R.id.txtDataNasc);
+
+        //Dizendo que os "txts" é o mesmo que class CLIENTE LOGADO onde esta armazenando o ID do cliente
+        txtDoc.setText(ClienteLogado.CLIENTELOGADO.getCpfcnpj());
+        txtEmail.setText(ClienteLogado.CLIENTELOGADO.getEmail());
+        txtNomeCliente.setText(ClienteLogado.CLIENTELOGADO.getNome());
+        txtDataNasc.setText(ClienteLogado.CLIENTELOGADO.getData_nascimento());
 
     }
 
@@ -41,12 +61,13 @@ public class DadosClienteActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
+
         } else {
             super.onBackPressed();
+            finish();
+
         }
     }
-
-
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
