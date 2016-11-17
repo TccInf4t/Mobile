@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="true">OnPecasMobile</string>
+    <string name="app_name" translatable="true">On Peças</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_inicial">On Peças</string>
 
@@ -8,7 +8,7 @@
     <string name="title_activity_acompanhamento">On Peças</string>
     <string name="title_activity_pedidos_realizados">On Peças</string>
     <string name="title_activity_dados_cliente">On Peças</string>
-    <string name="title_activity_scrolling">ScrollingActivity</string>
-    <string name="title_activity_detalhes">DetalhesActivity</string>
-    <string name="title_activity_acompanhamento_maps">Map</string>
+    <string name="title_activity_scrolling">On Peças</string>
+    <string name="title_activity_detalhes">On Peças</string>
+    <string name="title_activity_acompanhamento_maps">On Peças</string>
 </resources>

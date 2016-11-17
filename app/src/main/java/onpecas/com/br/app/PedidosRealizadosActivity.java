@@ -65,9 +65,24 @@ public class PedidosRealizadosActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+
         context = this;//definindo o contexto
 
         list_view_item = (ListView) findViewById(R.id.list_view_item);
+
+        list_view_item.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Pedido pedidoSelecionado = lstpedido[position];
+
+                Intent intent = new Intent(PedidosRealizadosActivity.this, DetalhesActivity.class);
+
+                intent.putExtra("pedido", pedidoSelecionado);
+
+                startActivity(intent);
+            }
+        });
+
         new ObterDadosAPI().execute();
 
     }

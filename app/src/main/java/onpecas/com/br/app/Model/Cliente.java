@@ -1,8 +1,6 @@
 package onpecas.com.br.app.Model;
 
-/**
- * Created by 15160977 on 24/10/2016.
- */
+
 public class Cliente {
 
     private int oid_cliente;
