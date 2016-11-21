@@ -56,6 +56,7 @@ public class ObterDadosAPI extends AsyncTask<Void, Void, String> {
         link= link+"?login&email="+txtEmail+"&senha="+txtSenha;
         BuscarDadosAPI dadosAPI = new BuscarDadosAPI();
         System.out.print(link);
+        Log.i("Teste", link);
 
         json = dadosAPI.getJson(link);
 
