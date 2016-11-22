@@ -31,6 +31,21 @@ public class DetalhesActivity extends AppCompatActivity {
             Toast.makeText(this, pedido.getDescricaostatus(), Toast.LENGTH_LONG).show();
 
             TabHost host = (TabHost)findViewById(android.R.id.tabhost);
+<<<<<<< HEAD
+
+            host.setup();
+
+            //Tab 1
+            TabHost.TabSpec tab1 = host.newTabSpec("Detalhe");
+            tab1.setContent(R.id.tab1);
+            tab1.setIndicator("Detalhes");
+            host.addTab(tab1);
+
+            //Tab 2
+            TabHost.TabSpec tab2 = host.newTabSpec("Mapa");
+            tab2.setContent(R.id.tab2);
+            tab2.setIndicator("Mapas");
+=======
             host.setup();
 
             //Tab 1
@@ -43,6 +58,7 @@ public class DetalhesActivity extends AppCompatActivity {
             TabHost.TabSpec tab2 = host.newTabSpec("Tab two");
             tab2.setContent(new Intent(this, AcompanhamentoMapsActivity.class));
             tab2.setIndicator("Tab Two");
+>>>>>>> ca753ad76041b1933128e41ccb2f7cbb36ad764d
             host.addTab(tab2);
 
 

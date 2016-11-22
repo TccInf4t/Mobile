@@ -38,8 +38,8 @@ import static onpecas.com.br.app.R.id.txt_nomepedido;
 public class InicialActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private TextView txtNomeCliente;
-    private TextView txtEmail;
+    public TextView txtNomeCliente;
+    public TextView txtEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,9 +67,6 @@ public class InicialActivity extends AppCompatActivity
         txtNomeCliente.setText(ClienteLogado.CLIENTELOGADO.getNome());
 
     }
-
-
-
 
     @Override
     public void onBackPressed() {

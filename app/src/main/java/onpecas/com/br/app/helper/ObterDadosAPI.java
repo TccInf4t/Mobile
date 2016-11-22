@@ -68,7 +68,7 @@ public class ObterDadosAPI extends AsyncTask<Void, Void, String> {
         super.onPostExecute(stringJson);
 
         progress.dismiss();
-        if(stringJson!=null){
+        if(stringJson!=null || !stringJson.isEmpty()){
             Gson gson = new Gson();
 
             Cliente[] lstcliente;
@@ -82,10 +82,16 @@ public class ObterDadosAPI extends AsyncTask<Void, Void, String> {
             }else {
                 AlertDialog.Builder builder = new AlertDialog.Builder(context).
                         setTitle("Erro").
-                        setMessage("Não foi possivel carregar o conteudo, tente novamente mais tarde!").
+                        setMessage("Ne mais tarde!").
                         setPositiveButton("OK", null);
                 builder.create().show();
             }
+        }else {
+            AlertDialog.Builder builder = new AlertDialog.Builder(context).
+                    setTitle("Erro").
+                    setMessage("Não foi possivel carregar o conteudo, tente novamente mais tarde!").
+                    setPositiveButton("OK", null);
+            builder.create().show();
         }
     }
 }

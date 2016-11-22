@@ -5,6 +5,10 @@
     android:id="@+id/content_detalhes"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+<<<<<<< HEAD
+    android:background="#fff"
+=======
+>>>>>>> ca753ad76041b1933128e41ccb2f7cbb36ad764d
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="onpecas.com.br.app.DetalhesActivity"
     tools:showIn="@layout/activity_detalhes"
