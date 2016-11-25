@@ -4,9 +4,16 @@ package onpecas.com.br.app.Model;
 public class Cliente {
 
     private int oid_cliente;
-    private String nome , email, senha, oid_imagem;
+    private String nome , email, senha, oid_imagem, caminho;
     private String ultimoacesso, data_nascimento, cpfcnpj;
 
+    public String getCaminho() {
+        return caminho;
+    }
+
+    public void setCaminho(String caminho) {
+        this.caminho = caminho;
+    }
 
     public int getOid_cliente() {
         return oid_cliente;

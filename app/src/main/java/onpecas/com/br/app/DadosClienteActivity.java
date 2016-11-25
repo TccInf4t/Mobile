@@ -13,9 +13,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import onpecas.com.br.app.helper.BuscarImagemAPI;
 import onpecas.com.br.app.helper.ClienteLogado;
+import onpecas.com.br.app.helper.ConfigLink;
+import onpecas.com.br.app.helper.DownloadImageTask;
 
 public class DadosClienteActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -24,6 +28,7 @@ public class DadosClienteActivity extends AppCompatActivity
     private TextView txtDoc;
     private TextView txtEmail;
     private TextView txtDataNasc;
+    private ImageView imgPerfil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +52,7 @@ public class DadosClienteActivity extends AppCompatActivity
         txtNomeCliente = (TextView) findViewById(R.id.txtNomeCliente);
         txtDoc = (TextView) findViewById(R.id.txtDoc);
         txtDataNasc = (TextView) findViewById(R.id.txtDataNasc);
+        imgPerfil = (ImageView) findViewById(R.id.imgPerfil);
 
         //Dizendo que os "txts" é o mesmo que class CLIENTE LOGADO onde esta armazenando o ID do cliente
         txtDoc.setText(ClienteLogado.CLIENTELOGADO.getCpfcnpj());
@@ -54,6 +60,7 @@ public class DadosClienteActivity extends AppCompatActivity
         txtNomeCliente.setText(ClienteLogado.CLIENTELOGADO.getNome());
         txtDataNasc.setText(ClienteLogado.CLIENTELOGADO.getData_nascimento());
 
+        new BuscarImagemAPI(imgPerfil).execute(String.format("%s%s", ConfigLink.LINK_IMAGEM, ClienteLogado.CLIENTELOGADO.getCaminho()));
     }
 
     @Override

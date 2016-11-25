@@ -32,6 +32,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import onpecas.com.br.app.Model.Peca;
 import onpecas.com.br.app.Model.Pedido;
 import onpecas.com.br.app.helper.BuscarDadosAPI;
 import onpecas.com.br.app.helper.ClienteLogado;
@@ -45,7 +46,6 @@ public class PedidosRealizadosActivity extends AppCompatActivity
 
     Pedido[] lstpedido;
     ListView list_view_item;
-    SimpleAdapter listAdapter;
 
     Context context;
 
@@ -131,6 +131,7 @@ public class PedidosRealizadosActivity extends AppCompatActivity
             if(stringJson!=null){
                 Gson gson = new Gson();
                 lstpedido = gson.fromJson(stringJson, Pedido[].class);
+
 
                 PedidoAdapter adapter = new PedidoAdapter(
                         PedidosRealizadosActivity.this,

@@ -35,6 +35,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="5dp"
                 android:src="@drawable/perfil_ofivial"
+                android:id="@+id/imgPerfil"
                />
 
             <TextView

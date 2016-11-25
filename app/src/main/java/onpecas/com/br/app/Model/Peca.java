@@ -1,6 +1,8 @@
 package onpecas.com.br.app.Model;
 
-public class Peca {
+import java.io.Serializable;
+
+public class Peca  implements Serializable {
 
     private int oid_peca, qtd;
     private String nome, descricao;

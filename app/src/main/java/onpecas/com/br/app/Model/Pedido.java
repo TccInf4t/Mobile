@@ -10,6 +10,15 @@ public class Pedido implements Serializable {
     private int oid_pedido;
     private double frete;
     private String nomestatus, descricaostatus, formapagamento, dtrealizado;
+    private Peca[] oid_peca;
+
+    public Peca[] getOid_peca() {
+        return oid_peca;
+    }
+
+    public void setOid_peca(Peca[] oid_peca) {
+        this.oid_peca = oid_peca;
+    }
 
     public int getOid_pedido() {
         return oid_pedido;
