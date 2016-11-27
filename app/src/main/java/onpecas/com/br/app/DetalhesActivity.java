@@ -1,13 +1,14 @@
 package onpecas.com.br.app;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,15 +17,19 @@ import java.text.NumberFormat;
 
 import onpecas.com.br.app.Model.Peca;
 import onpecas.com.br.app.Model.Pedido;
+import onpecas.com.br.app.helper.ServicosLocalizacao;
 
 public class DetalhesActivity extends AppCompatActivity {
-
+    ResponseReceiver receiver;
+    Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalhes);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        context = this;
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -80,13 +85,44 @@ public class DetalhesActivity extends AppCompatActivity {
                 @Override
                 public void onTabChanged(String tabId) {
                     if(tab1.getTag().equals(tabId)) {
-                        Log.i("JKAGSDASDASDAS", "CLICOU 1");
+                        /*Tira o registro de quem estava recebendo o serviço*/
+                        LocalBroadcastManager localBroadcastManager;
+                        localBroadcastManager = LocalBroadcastManager.getInstance(context);
+                        localBroadcastManager.unregisterReceiver(receiver);
                     }
                     if(tab2.getTag().equals(tabId)) {
-                        Log.i("JKAGSDASDASDAS", "CLICOU 2");
+                        Intent intent = new Intent(context, ServicosLocalizacao.class);
+
+                        //Inicia o serviço
+                        startService(intent);
                     }
-                }});
+                }
+            });
         }
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        /* Filter resolve(filtra) a tag do Broadcast
+        * Resolve apenas um especifico*/
+        IntentFilter broadcastFilter = new IntentFilter(ResponseReceiver.PACKBROADCAST);
+        receiver = new ResponseReceiver();
+
+        /*Registra quem vai receber os broadcast de acordo com o filtro*/
+        LocalBroadcastManager localBroadcastManager;
+        localBroadcastManager = LocalBroadcastManager.getInstance(context);
+        localBroadcastManager.registerReceiver(receiver, broadcastFilter);
+    }
+
+    /* Classe para pegar o BroadCast enviado*/
+    public class ResponseReceiver extends BroadcastReceiver {
+        public static final String PACKBROADCAST = "br.com.onpecas.app.servicos";
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String resultado = intent.getStringExtra("saida");
+            Toast.makeText(context, "O resultado é:"+resultado, Toast.LENGTH_LONG).show();
+        }
+    }
 }

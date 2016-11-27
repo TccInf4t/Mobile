@@ -15,18 +15,18 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageViewHeader"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginLeft="-10dp"
         android:layout_marginTop="25dp"
-        android:src="@drawable/perfil_ofivial" />
+        android:src="@drawable/usuariopadrao" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="-20dp"
-        android:id="@+id/txtNomeCliente"
+        android:id="@+id/txtNomeClienteHeader"
         android:text="jhon Everton"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 

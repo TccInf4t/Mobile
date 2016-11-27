@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="onpecas.com.br.app">
-    package="com.example.android.multidex.myapplication">
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -33,10 +32,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".InicialActivity"
-            android:label="@string/title_activity_inicial"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".PedidosRealizadosActivity"
             android:label="@string/title_activity_pedidos_realizados"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -58,9 +53,6 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".AcompanhamentoMapsActivity"
-            android:label="@string/title_activity_acompanhamento_maps" />
-        <activity
             android:name=".DetalhesActivity"
             android:label="@string/title_activity_detalhes"
             android:parentActivityName=".PedidosRealizadosActivity"
@@ -69,6 +61,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="onpecas.com.br.app.PedidosRealizadosActivity" />
         </activity>
+        <activity
+            android:name=".AcompanhamentoMap"
+            android:label="@string/title_activity_acompanhamento_map"></activity>
+        <service android:name=".helper.ServicosLocalizacao"/>
     </application>
 
 </manifest>

@@ -1,11 +1,22 @@
 package onpecas.com.br.app.Model;
 
 
+import android.graphics.Bitmap;
+
 public class Cliente {
 
     private int oid_cliente;
     private String nome , email, senha, oid_imagem, caminho;
     private String ultimoacesso, data_nascimento, cpfcnpj;
+    private Bitmap imagem;
+
+    public Bitmap getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(Bitmap imagem) {
+        this.imagem = imagem;
+    }
 
     public String getCaminho() {
         return caminho;

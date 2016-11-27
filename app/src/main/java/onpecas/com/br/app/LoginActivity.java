@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         btnEntrar = (Button) findViewById(R.id.btnEntrar);
-        txtLogin = (EditText) findViewById(R.id.txtLogin);
+        txtLogin = (EditText) findViewById(R.id.txtEmail);
         txtSenha = (EditText) findViewById(R.id.txtSenha);
 
         btnEntrar.setOnClickListener(new View.OnClickListener() {
@@ -55,7 +55,6 @@ public class LoginActivity extends AppCompatActivity {
 
                 //Verificando se o Email e Senha é valido
                 if(!email.isEmpty() && !senha.isEmpty()){
-                    System.out.print(email+"-"+senha);
                     new ObterDadosAPI(LoginActivity.this, email, senha).execute();
                 }else{
                     AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this).

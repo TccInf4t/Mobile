@@ -5,14 +5,11 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.provider.Settings;
 import android.util.Log;
-import android.widget.Toast;
 
-import com.google.android.gms.analytics.internal.zzy;
 import com.google.gson.Gson;
 
-import onpecas.com.br.app.InicialActivity;
+import onpecas.com.br.app.DadosClienteActivity;
 import onpecas.com.br.app.LoginActivity;
 import onpecas.com.br.app.Model.Cliente;
 
@@ -75,14 +72,14 @@ public class ObterDadosAPI extends AsyncTask<Void, Void, String> {
             lstcliente = gson.fromJson(stringJson, Cliente[].class);
             if(lstcliente != null){
                 ClienteLogado.CLIENTELOGADO = lstcliente[0];
-                Intent intent = new Intent(context, InicialActivity.class);
+                Intent intent = new Intent(context, DadosClienteActivity.class);
                 context.startActivity(intent);
 
                 ((LoginActivity)context).finish();
             }else {
                 AlertDialog.Builder builder = new AlertDialog.Builder(context).
                         setTitle("Erro").
-                        setMessage("Ne mais tarde!").
+                        setMessage("E-mail ou senha incorreto!").
                         setPositiveButton("OK", null);
                 builder.create().show();
             }

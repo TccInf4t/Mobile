@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,71 +11,57 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="onpecas.com.br.app.LoginActivity"
-    tools:showIn="@layout/activity_login">
+    tools:showIn="@layout/activity_login"
+    android:orientation="vertical"
+    android:weightSum="1">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="77dp"
+        android:id="@+id/imageView3"
+        android:layout_below="@+id/imageView2"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/onpeca"
+        android:layout_above="@+id/ViewLogin"
+        android:layout_weight="0.30" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/fNameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/txtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="E-mail"
+            android:inputType="textEmailAddress"
+            android:ems="10"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/fName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/txtSenha"
+            android:layout_marginTop="25dp"
+            android:hint="Senha"/>
+    </android.support.design.widget.TextInputLayout>
 
     <Button
+        android:layout_gravity="right"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:text="Entrar"
         android:id="@+id/btnEntrar"
         android:background="#5af"
-        android:layout_below="@+id/txtSenha"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:textColor="#fff" />
-
-    <EditText
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtLogin"
-        android:layout_above="@+id/textView2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="25dp" />
-
-    <TextView
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:text="Login"
-        android:id="@+id/ViewLogin"
-        android:textColor="#000"
-        android:textSize="25dp"
-        android:layout_marginBottom="66dp"
-        android:layout_alignBottom="@+id/txtLogin"
-        android:layout_alignStart="@+id/txtLogin" />
-
-    <TextView
-        android:layout_width="150dp"
-        android:layout_height="30dp"
-        android:text="Senha"
-        android:id="@+id/textView2"
-        android:textColor="#000"
-        android:textSize="25dp"
-        android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/txtLogin" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/txtSenha"
-        android:layout_below="@+id/textView2"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_marginTop="25dp"
-        android:layout_alignEnd="@+id/txtLogin" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView2"
-        android:layout_centerHorizontal="true" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView3"
-        android:layout_below="@+id/imageView2"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/onpeca"
-        android:layout_above="@+id/ViewLogin" />
-</RelativeLayout>
+</LinearLayout>

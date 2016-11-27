@@ -171,14 +171,8 @@ public class PedidosRealizadosActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_inicio) {
-            Intent intent = new Intent(this, InicialActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_pedidos) {
+        if (id == R.id.nav_pedidos) {
             Intent intent = new Intent(this, PedidosRealizadosActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_acompanhamento) {
-            Intent intent = new Intent(this, AcompanhamentoMapsActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_cliente) {
             Intent intent = new Intent(this, DadosClienteActivity.class);

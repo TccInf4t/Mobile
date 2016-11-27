@@ -2,21 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     >
 
-    <group android:checkableBehavior="single"
-       >
-
-        <item
-            android:id="@+id/nav_inicio"
-            android:icon="@drawable/ic_cast_on_0_light"
-            android:title="Inicio" />
+    <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_pedidos"
-            android:icon="@drawable/ic_cast_light"
+            android:icon="@drawable/pedido"
             android:title="Pedidos Realizados" />
-        <item
-            android:id="@+id/nav_acompanhamento"
-            android:icon="@drawable/ic_cast_dark"
-            android:title="Acompanhamento" />
         <item
             android:id="@+id/nav_cliente"
             android:icon="@drawable/dados"
